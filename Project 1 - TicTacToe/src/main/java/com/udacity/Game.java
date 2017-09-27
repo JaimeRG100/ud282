@@ -150,7 +150,33 @@ public class Game {
      */
     public String checkGameWinner(char [][]grid){
         String result = "None";
-        //Student code goes here ...
+
+        // check horizontal lines
+        if (grid[0][0]==grid[1][0] && grid[1][0]==grid[2][0] && grid[0][0]!='-')
+            return (grid[0][0] + " wins");
+        else if (grid[0][1]==grid[1][1] && grid[1][1]==grid[2][1] && grid[0][1]!='-')
+            return (grid[0][1] + " wins");
+        else if (grid[0][2]==grid[1][2] && grid[1][2]==grid[2][2] && grid[0][2]!='-')
+            return (grid[0][2] + " wins");
+        // check vertical lines
+        else if (grid[0][0]==grid[0][1] && grid[0][1]==grid[0][2] && grid[0][0]!='-')
+            return (grid[0][0] + " wins");
+        else if (grid[1][0]==grid[1][1] && grid[1][1]==grid[1][2] && grid[1][0]!='-')
+            return (grid[1][0] + " wins");
+        else if (grid[2][0]==grid[2][1] && grid[2][1]==grid[2][2] && grid[2][0]!='-')
+            return (grid[2][0] + " wins");
+        // check diagonal lines
+        else if (grid[0][0]==grid[1][1] && grid[1][1]==grid[2][2] && grid[0][0]!='-')
+            return (grid[0][0] + " wins");
+        else if (grid[0][2]==grid[1][1] && grid[1][1]==grid[2][0] && grid[0][2]!='-')
+            return (grid[0][2] + " wins");
+        /*
+00,11;22
+02,11;20
+*/
+        if (freeSpots == 0 && result == "None") {
+        result = "Tie";
+        }
         return result;
     }
 
